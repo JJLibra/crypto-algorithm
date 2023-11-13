@@ -232,10 +232,9 @@ def sm3(msg):
  
  
 s1 = 'abc'
- 
 s1_sm3 = sm3(s1)
 print("{} ==> {}".format(s1, s1_sm3))
  
-s2 = 'hello'
+s2 = 'abcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcd'
 s2_sm3 = sm3(s2)
 print("{} ==> {}".format(s2, s2_sm3))
