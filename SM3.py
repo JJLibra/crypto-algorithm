@@ -19,7 +19,9 @@ description: SM3加密算法 适用于python2.7+, python3.5+(用python3时暂不
     b.进入压缩函数CF 涉及置换函数P0和四个中间变量和布尔函数FF、GG
     最后一轮迭代结果即为杂凑值
 """
- 
+import hmac
+import hashlib
+
 # 初始值
 iv = 0x7380166f4914b2b9172442d7da8a0600a96f30bc163138aae38dee4db0fb0e4e
 MAX = 2 ** 32
@@ -255,3 +257,8 @@ print("{} ==> {}".format(s1, s1_sm3))
 s2 = 'abcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcd'
 s2_sm3 = sm3(s2)
 print("{} ==> {}".format(s2, s2_sm3))
+
+key = "0123456789ABCDEF"
+# HMAC密钥，长度为16个字节
+message = "Hello HMAC-SM3!"
+
